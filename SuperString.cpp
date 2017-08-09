@@ -34,15 +34,30 @@ SuperString::~SuperString()
 
 void SuperString::addText(char text[])
 {
-    
+    for (int i = 0; text[i] != '\0'; i++)
+    {
+        addCharacter(text[i]);
+    }
 }
 
-void SuperString::print()
+void SuperString::addCharacter(const char input)
+{
+    ++size;
+    
+    temporary = tail;
+    temporary->character = input;
+    temporary->next = new node;
+    tail = temporary->next;
+    tail->previous = temporary;
+    tail->character = '\0';
+}
+
+void SuperString::print() const
 {
     
 }
 
-void SuperString::printReverse()
+void SuperString::printReverse() const
 {
     
 }

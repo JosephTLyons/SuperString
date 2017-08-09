@@ -33,8 +33,9 @@ public:
     ~SuperString();
     
     void addText(char text[]);
-    void print();
-    void printReverse();
+    void addCharacter(const char input);
+    void print() const;
+    void printReverse() const;
 };
 
 #endif /* SuperString_hpp */
