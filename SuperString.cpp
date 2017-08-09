@@ -7,6 +7,7 @@
 //
 
 #include "SuperString.hpp"
+#include <iostream>
 
 void SuperString::init()
 {
@@ -44,7 +45,7 @@ void SuperString::addCharacter(const char input)
 {
     ++size;
     
-    temporary = tail;
+    node *temporary = tail;
     temporary->character = input;
     temporary->next = new node;
     tail = temporary->next;
@@ -54,10 +55,26 @@ void SuperString::addCharacter(const char input)
 
 void SuperString::print() const
 {
+    node *iter = head;
     
+    for (int i = 0; i < size; i++)
+    {
+        std::cout << iter->character;
+        iter = iter->next;
+    }
+    
+    std::cout << std::endl;
 }
 
 void SuperString::printReverse() const
 {
+    node *iter = tail->previous;
     
+    for (int i = 0; i < size; i++)
+    {
+        std::cout << iter->character;
+        iter = iter->previous;
+    }
+    
+    std::cout << std::endl;
 }

@@ -19,7 +19,7 @@ private:
         node *next, *previous;
     };
     
-    node *head, *tail, *temporary;
+    node *head, *tail;
     
     long unsigned int size;
     
