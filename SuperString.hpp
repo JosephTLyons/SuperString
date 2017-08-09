@@ -36,6 +36,8 @@ public:
     void addCharacter(const char input);
     void print() const;
     void printReverse() const;
+    
+    long unsigned int getSize();
 };
 
 #endif /* SuperString_hpp */

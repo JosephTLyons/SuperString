@@ -78,3 +78,8 @@ void SuperString::printReverse() const
     
     std::cout << std::endl;
 }
+
+long unsigned int SuperString::getSize()
+{
+    return size;
+}
