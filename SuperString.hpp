@@ -36,6 +36,7 @@ public:
     void addCharacter(const char input);
     void print() const;
     void printReverse() const;
+    void clear();
     
     long unsigned int getSize();
 };

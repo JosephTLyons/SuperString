@@ -30,7 +30,8 @@ SuperString::SuperString(char text[])
 
 SuperString::~SuperString()
 {
-    
+    clear();
+    delete head;
 }
 
 void SuperString::addText(char text[])
@@ -77,6 +78,19 @@ void SuperString::printReverse() const
     }
     
     std::cout << std::endl;
+}
+
+void SuperString::clear()
+{
+    for (int i = 0; i < size; i++)
+    {
+        tail = tail->previous;
+        delete tail->next;
+    }
+    
+    tail = head;
+    head->character = '\0';
+    size = 0;
 }
 
 long unsigned int SuperString::getSize()
