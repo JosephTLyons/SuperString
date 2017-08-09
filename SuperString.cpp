@@ -11,17 +11,20 @@
 void SuperString::init()
 {
     size = 0;
-    
+    head = new node;
+    tail = head;
+    head->character = '\0';
 }
 
 SuperString::SuperString()
 {
-    
+    init();
 }
 
 SuperString::SuperString(char text[])
 {
-    
+    init();
+    addText(text);
 }
 
 SuperString::~SuperString()
@@ -29,7 +32,7 @@ SuperString::~SuperString()
     
 }
 
-void SuperString::addText()
+void SuperString::addText(char text[])
 {
     
 }
@@ -38,6 +41,7 @@ void SuperString::print()
 {
     
 }
+
 void SuperString::printReverse()
 {
     

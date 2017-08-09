@@ -14,7 +14,7 @@ class SuperString
 private:
     struct node
     {
-        char letter;
+        char character;
         
         node *next, *previous;
     };
@@ -32,7 +32,7 @@ public:
     SuperString(char text[]);
     ~SuperString();
     
-    void addText();
+    void addText(char text[]);
     void print();
     void printReverse();
 };
