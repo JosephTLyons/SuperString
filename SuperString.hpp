@@ -38,7 +38,7 @@ public:
     void printReverse() const;
     void clear();
     
-    long unsigned int getSize();
+    long unsigned int getSize() const;
 };
 
 #endif /* SuperString_hpp */

@@ -93,7 +93,7 @@ void SuperString::clear()
     size = 0;
 }
 
-long unsigned int SuperString::getSize()
+long unsigned int SuperString::getSize() const
 {
     return size;
 }
