@@ -34,6 +34,13 @@ SuperString::~SuperString()
     delete head;
 }
 
+SuperString& SuperString::operator= (const SuperString &superString)
+{
+    addText(superString.getText());
+    
+    return *this;
+}
+
 void SuperString::addText(char text[])
 {
     for (int i = 0; text[i] != '\0'; i++)
@@ -52,6 +59,20 @@ void SuperString::addCharacter(const char input)
     tail->next = new node;
     tail->next->previous = tail;
     tail = tail->next;
+}
+
+char* SuperString::getText() const
+{
+    char *textArrayPtr = new char[size];
+    node *iter = head;
+    
+    for (int i = 0; i < size; i++)
+    {
+        textArrayPtr[i] = iter->character;
+        iter = iter->next;
+    }
+    
+    return textArrayPtr;
 }
 
 void SuperString::print() const

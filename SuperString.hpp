@@ -31,9 +31,11 @@ public:
     SuperString();
     SuperString(char text[]);
     ~SuperString();
+    SuperString& operator= (const SuperString &superString);
     
     void addText(char text[]);
     void addCharacter(const char input);
+    char* getText() const;
     void print() const;
     void printReverse() const;
     void clear();
