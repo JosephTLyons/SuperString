@@ -40,18 +40,18 @@ void SuperString::addText(char text[])
     {
         addCharacter(text[i]);
     }
+    
+    tail->character = '\0';
 }
 
 void SuperString::addCharacter(const char input)
 {
     ++size;
     
-    node *temporary = tail;
-    temporary->character = input;
-    temporary->next = new node;
-    tail = temporary->next;
-    tail->previous = temporary;
-    tail->character = '\0';
+    tail->character = input;
+    tail->next = new node;
+    tail->next->previous = tail;
+    tail = tail->next;
 }
 
 void SuperString::print() const
