@@ -46,6 +46,11 @@ bool SuperString::operator== (const SuperString &superString) const
     return isEqual(superString);
 }
 
+void SuperString::operator+= (const char &input)
+{
+    addCharacterToBeginning(input);
+}
+
 istream& operator>> (istream &in, SuperString &superString)
 {
     superString.size = 0;

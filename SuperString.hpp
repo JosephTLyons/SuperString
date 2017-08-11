@@ -37,6 +37,8 @@ public:
     SuperString& operator= (const SuperString &superString);
     bool operator== (const SuperString &superString) const;
     
+    void operator+= (const char &input);
+    
     friend istream& operator>> (istream &in, SuperString &superString);
     friend ostream& operator<< (ostream &out, const SuperString &superString);
     
