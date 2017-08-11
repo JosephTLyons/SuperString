@@ -15,16 +15,15 @@ using namespace std;
 class SuperString
 {
 private:
+    long unsigned int size;
+    
     struct node
     {
         char character;
-        
         node *next, *previous;
     };
     
     node *head, *tail;
-    
-    long unsigned int size;
     
     // Private methods
     void init();
