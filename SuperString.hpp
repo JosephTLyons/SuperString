@@ -29,7 +29,6 @@ private:
     void init();
     
 public:
-    
     SuperString();
     SuperString(char text[]);
     ~SuperString();
