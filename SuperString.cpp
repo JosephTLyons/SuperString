@@ -70,8 +70,6 @@ ostream& operator<< (ostream &out, const SuperString &superString)
         iter = iter->next;
     }
     
-    out << "\n";
-    
     return out;
 }
 
