@@ -41,7 +41,7 @@ public:
     friend ostream& operator<< (ostream &out, const SuperString &superString);
     
     void addText(char text[]);
-    void addCharacter(const char input);
+    void addCharacterToEnd(const char &input);
     bool isEqual(const SuperString &superString) const;
     char* getText() const;
     void print() const;

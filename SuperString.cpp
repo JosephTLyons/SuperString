@@ -53,7 +53,7 @@ istream& operator>> (istream &in, SuperString &superString)
     
     while(character != '\n')
     {
-        superString.addCharacter(character);
+        superString.addCharacterToEnd(character);
         character = cin.get();
     }
     
@@ -77,13 +77,13 @@ void SuperString::addText(char text[])
 {
     for (int i = 0; text[i] != '\0'; i++)
     {
-        addCharacter(text[i]);
+        addCharacterToEnd(text[i]);
     }
     
     tail->character = '\0';
 }
 
-void SuperString::addCharacter(const char input)
+void SuperString::addCharacterToEnd(const char &input)
 {
     ++size;
     
