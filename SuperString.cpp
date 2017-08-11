@@ -164,7 +164,6 @@ void SuperString::clear()
         delete tail->next;
     }
     
-    tail = head;
     head->character = '\0';
     size = 0;
 }
