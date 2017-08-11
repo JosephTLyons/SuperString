@@ -9,6 +9,9 @@
 #ifndef SuperString_hpp
 #define SuperString_hpp
 
+#include <iostream>
+using namespace std;
+
 class SuperString
 {
 private:
@@ -31,7 +34,10 @@ public:
     SuperString();
     SuperString(char text[]);
     ~SuperString();
+    
     SuperString& operator= (const SuperString &superString);
+    
+    friend ostream& operator<< (ostream &out, const SuperString &superString);
     
     void addText(char text[]);
     void addCharacter(const char input);

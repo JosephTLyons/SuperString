@@ -41,6 +41,21 @@ SuperString& SuperString::operator= (const SuperString &superString)
     return *this;
 }
 
+ostream& operator<< (ostream &out, const SuperString &superString)
+{
+    SuperString::node *iter = superString.head;
+    
+    for (int i = 0; i < superString.size; i++)
+    {
+        out << iter->character;
+        iter = iter->next;
+    }
+    
+    out << "\n";
+    
+    return out;
+}
+
 void SuperString::addText(char text[])
 {
     for (int i = 0; text[i] != '\0'; i++)
