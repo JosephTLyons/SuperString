@@ -201,6 +201,11 @@ void SuperString::printReverse() const
 
 char SuperString::getCharAtPosition(long unsigned int &index) const
 {
+    if (index > size - 1)
+    {
+        return '\0';
+    }
+    
     node *iter = head;
     
     for (long unsigned int i = 0; i != index; i++)
