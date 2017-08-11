@@ -61,6 +61,11 @@ SuperString SuperString::operator+ (const SuperString &superString)
     return (this->add(superString));
 }
 
+char SuperString::operator[] (long unsigned int index)
+{
+    return getCharAtPosition(index);
+}
+
 istream& operator>> (istream &in, SuperString &superString)
 {
     superString.size = 0;
@@ -192,6 +197,18 @@ void SuperString::printReverse() const
     }
     
     std::cout << std::endl;
+}
+
+char SuperString::getCharAtPosition(long unsigned int &index) const
+{
+    node *iter = head;
+    
+    for (long unsigned int i = 0; i != index; i++)
+    {
+        iter = iter->next;
+    }
+    
+    return iter->character;
 }
 
 void SuperString::clear()

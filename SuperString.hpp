@@ -39,6 +39,7 @@ public:
     void operator+= (const char &input);
     void operator+= (const SuperString &superString);
     SuperString operator+ (const SuperString &superString);
+    char operator[] (long unsigned int index);
     
     friend istream& operator>> (istream &in, SuperString &superString);
     friend ostream& operator<< (ostream &out, const SuperString &superString);
@@ -52,6 +53,7 @@ public:
     char* getText() const;
     void print() const;
     void printReverse() const;
+    char getCharAtPosition(long unsigned int &index) const;
     void clear();
     
     long unsigned int getSize() const;
