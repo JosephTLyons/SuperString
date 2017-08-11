@@ -38,6 +38,7 @@ public:
     bool operator== (const SuperString &superString) const;
     
     void operator+= (const char &input);
+    void operator+= (const SuperString &superString);
     
     friend istream& operator>> (istream &in, SuperString &superString);
     friend ostream& operator<< (ostream &out, const SuperString &superString);
@@ -45,6 +46,7 @@ public:
     void addText(char text[]);
     void addCharacterToBeginning(const char &input);
     void addCharacterToEnd(const char &input);
+    void concatenate(const SuperString &superString);
     bool isEqual(const SuperString &superString) const;
     char* getText() const;
     void print() const;

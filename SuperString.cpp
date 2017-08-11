@@ -51,6 +51,11 @@ void SuperString::operator+= (const char &input)
     addCharacterToBeginning(input);
 }
 
+void SuperString::operator+= (const SuperString &superString)
+{
+    concatenate(superString);
+}
+
 istream& operator>> (istream &in, SuperString &superString)
 {
     superString.size = 0;
@@ -106,6 +111,11 @@ void SuperString::addCharacterToEnd(const char &input)
     tail->next = new node;
     tail->next->previous = tail;
     tail = tail->next;
+}
+
+void SuperString::concatenate(const SuperString &superString)
+{
+    addText(superString.getText());
 }
 
 bool SuperString::isEqual(const SuperString &superString) const
