@@ -35,14 +35,14 @@ public:
     ~SuperString();
     
     SuperString& operator= (const SuperString &superString);
-    bool operator== (const SuperString &superString);
+    bool operator== (const SuperString &superString) const;
     
     friend istream& operator>> (istream &in, SuperString &superString);
     friend ostream& operator<< (ostream &out, const SuperString &superString);
     
     void addText(char text[]);
     void addCharacter(const char input);
-    bool isEqual(const SuperString &superString);
+    bool isEqual(const SuperString &superString) const;
     char* getText() const;
     void print() const;
     void printReverse() const;

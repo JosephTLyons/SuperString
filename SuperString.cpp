@@ -41,7 +41,7 @@ SuperString& SuperString::operator= (const SuperString &superString)
     return *this;
 }
 
-bool SuperString::operator== (const SuperString &superString)
+bool SuperString::operator== (const SuperString &superString) const
 {
     return isEqual(superString);
 }
@@ -93,7 +93,7 @@ void SuperString::addCharacter(const char input)
     tail = tail->next;
 }
 
-bool SuperString::isEqual(const SuperString &superString)
+bool SuperString::isEqual(const SuperString &superString) const
 {
     if (size != superString.size)
     {
