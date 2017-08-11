@@ -83,6 +83,16 @@ void SuperString::addText(char text[])
     tail->character = '\0';
 }
 
+void SuperString::addCharacterToBeginning(const char &input)
+{
+    ++size;
+    
+    head->previous = new node;
+    head->previous->next = head;
+    head = head->previous;
+    head->character = input;
+}
+
 void SuperString::addCharacterToEnd(const char &input)
 {
     ++size;
