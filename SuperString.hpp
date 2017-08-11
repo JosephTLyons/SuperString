@@ -36,11 +36,13 @@ public:
     ~SuperString();
     
     SuperString& operator= (const SuperString &superString);
+    bool operator== (const SuperString &superString);
     
     friend ostream& operator<< (ostream &out, const SuperString &superString);
     
     void addText(char text[]);
     void addCharacter(const char input);
+    bool isEqual(const SuperString &superString);
     char* getText() const;
     void print() const;
     void printReverse() const;

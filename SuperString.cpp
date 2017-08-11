@@ -41,6 +41,11 @@ SuperString& SuperString::operator= (const SuperString &superString)
     return *this;
 }
 
+bool SuperString::operator== (const SuperString &superString)
+{
+    return isEqual(superString);
+}
+
 ostream& operator<< (ostream &out, const SuperString &superString)
 {
     SuperString::node *iter = superString.head;
@@ -74,6 +79,29 @@ void SuperString::addCharacter(const char input)
     tail->next = new node;
     tail->next->previous = tail;
     tail = tail->next;
+}
+
+bool SuperString::isEqual(const SuperString &superString)
+{
+    if (size != superString.size)
+    {
+        return false;
+    }
+    
+    node *iterOne = head, *iterTwo = superString.head;
+    
+    for (int i = 0; i < size; i++)
+    {
+        if (iterOne->character != iterTwo->character)
+        {
+            return false;
+        }
+        
+        iterOne = iterOne->next;
+        iterTwo = iterTwo->next;
+    }
+        
+    return true;
 }
 
 char* SuperString::getText() const
