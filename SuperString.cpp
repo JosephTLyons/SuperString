@@ -46,6 +46,20 @@ bool SuperString::operator== (const SuperString &superString)
     return isEqual(superString);
 }
 
+istream& operator>> (istream &in, SuperString &superString)
+{
+    superString.size = 0;
+    char character = cin.get();
+    
+    while(character != '\n')
+    {
+        superString.addCharacter(character);
+        character = cin.get();
+    }
+    
+    return in;
+}
+
 ostream& operator<< (ostream &out, const SuperString &superString)
 {
     SuperString::node *iter = superString.head;
