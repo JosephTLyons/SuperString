@@ -56,6 +56,11 @@ void SuperString::operator+= (const SuperString &superString)
     concatenate(superString);
 }
 
+SuperString SuperString::operator+ (const SuperString &superString)
+{
+    return (this->add(superString));
+}
+
 istream& operator>> (istream &in, SuperString &superString)
 {
     superString.size = 0;
@@ -116,6 +121,14 @@ void SuperString::addCharacterToEnd(const char &input)
 void SuperString::concatenate(const SuperString &superString)
 {
     addText(superString.getText());
+}
+
+SuperString SuperString::add(const SuperString &superString)
+{
+    SuperString temp;
+    temp += *this;
+    temp += superString;
+    return temp;
 }
 
 bool SuperString::isEqual(const SuperString &superString) const
