@@ -245,3 +245,13 @@ long unsigned int SuperString::getSize() const
 {
     return size;
 }
+
+char SuperString::getFirstCharacter() const
+{
+    return head->character;
+}
+
+char SuperString::getLastCharacter() const
+{
+    return tail->previous->character;
+}

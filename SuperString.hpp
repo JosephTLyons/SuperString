@@ -58,6 +58,9 @@ public:
     void clear();
     
     long unsigned int getSize() const;
+    char getFirstCharacter() const;
+    char getLastCharacter() const;
+    
 };
 
 #endif /* SuperString_hpp */
