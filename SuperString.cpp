@@ -235,6 +235,7 @@ void SuperString::clear()
     {
         tail = tail->previous;
         delete tail->next;
+        tail->next = nullptr;
     }
     
     head->character = '\0';
