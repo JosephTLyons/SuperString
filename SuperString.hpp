@@ -33,6 +33,7 @@ public:
     SuperString(char text[]);
     ~SuperString();
     
+    // Deep copy
     SuperString& operator= (const SuperString &superString);
     bool operator== (const SuperString &superString) const;
     
