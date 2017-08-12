@@ -202,9 +202,9 @@ void SuperString::printReverse() const
 void SuperString::reverse()
 {
     node *iterOne = head, *iterTwo = tail->previous;
-    long unsigned int temp = size / 2;
+    long unsigned int halfWayPoint = size / 2;
     
-    for (int i = 0; i < temp; i++)
+    for (int i = 0; i < halfWayPoint; i++)
     {
         std::swap(iterOne->character, iterTwo->character);
         iterOne = iterOne->next;
