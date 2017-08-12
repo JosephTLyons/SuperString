@@ -14,7 +14,7 @@
 class SuperString
 {
 private:
-    long unsigned int size;
+    long unsigned int length;
     
     struct node
     {
@@ -55,7 +55,7 @@ public:
     char getCharAtPosition(long unsigned int &index) const;
     void clear();
     
-    long unsigned int getSize() const;
+    long unsigned int getLength() const;
     char getFirstCharacter() const;
     char getLastCharacter() const;
     

@@ -11,7 +11,7 @@
 
 void SuperString::init()
 {
-    size = 0;
+    length = 0;
     head = new node;
     tail = head;
     head->character = '\0';
@@ -68,7 +68,7 @@ char SuperString::operator[] (long unsigned int index)
 
 std::istream& operator>> (std::istream &in, SuperString &superString)
 {
-    superString.size = 0;
+    superString.length = 0;
     char character = std::cin.get();
     
     while(character != '\n')
@@ -84,7 +84,7 @@ std::ostream& operator<< (std::ostream &out, const SuperString &superString)
 {
     SuperString::node *iter = superString.head;
     
-    for (int i = 0; i < superString.size; i++)
+    for (int i = 0; i < superString.length; i++)
     {
         out << iter->character;
         iter = iter->next;
@@ -105,7 +105,7 @@ void SuperString::addText(char text[])
 
 void SuperString::addCharacterToBeginning(const char &input)
 {
-    ++size;
+    ++length;
     
     head->previous = new node;
     head->previous->next = head;
@@ -115,7 +115,7 @@ void SuperString::addCharacterToBeginning(const char &input)
 
 void SuperString::addCharacterToEnd(const char &input)
 {
-    ++size;
+    ++length;
     
     tail->character = input;
     tail->next = new node;
@@ -138,14 +138,14 @@ SuperString SuperString::add(const SuperString &superString)
 
 bool SuperString::isEqual(const SuperString &superString) const
 {
-    if (size != superString.size)
+    if (length != superString.length)
     {
         return false;
     }
     
     node *iterOne = head, *iterTwo = superString.head;
     
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < length; i++)
     {
         if (iterOne->character != iterTwo->character)
         {
@@ -161,10 +161,10 @@ bool SuperString::isEqual(const SuperString &superString) const
 
 char* SuperString::getText() const
 {
-    char *textArrayPtr = new char[size];
+    char *textArrayPtr = new char[length];
     node *iter = head;
     
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < length; i++)
     {
         textArrayPtr[i] = iter->character;
         iter = iter->next;
@@ -177,7 +177,7 @@ void SuperString::print() const
 {
     node *iter = head;
     
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < length; i++)
     {
         std::cout << iter->character;
         iter = iter->next;
@@ -190,7 +190,7 @@ void SuperString::printReverse() const
 {
     node *iter = tail->previous;
     
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < length; i++)
     {
         std::cout << iter->character;
         iter = iter->previous;
@@ -202,7 +202,7 @@ void SuperString::printReverse() const
 void SuperString::reverse()
 {
     node *iterOne = head, *iterTwo = tail->previous;
-    const long unsigned int halfWayPoint = size / 2;
+    const long unsigned int halfWayPoint = length / 2;
     
     for (int i = 0; i < halfWayPoint; i++)
     {
@@ -214,7 +214,7 @@ void SuperString::reverse()
 
 char SuperString::getCharAtPosition(long unsigned int &index) const
 {
-    if (index > size - 1)
+    if (index > length - 1)
     {
         return '\0';
     }
@@ -231,7 +231,7 @@ char SuperString::getCharAtPosition(long unsigned int &index) const
 
 void SuperString::clear()
 {
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < length; i++)
     {
         tail = tail->previous;
         delete tail->next;
@@ -239,12 +239,12 @@ void SuperString::clear()
     }
     
     head->character = '\0';
-    size = 0;
+    length = 0;
 }
 
-long unsigned int SuperString::getSize() const
+long unsigned int SuperString::getLength() const
 {
-    return size;
+    return length;
 }
 
 char SuperString::getFirstCharacter() const
