@@ -63,7 +63,6 @@ public:
     long unsigned int getLength() const;
     char getFirstCharacter() const;
     char getLastCharacter() const;
-    
 };
 
 #endif /* SuperString_hpp */
