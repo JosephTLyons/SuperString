@@ -10,7 +10,6 @@
 #define SuperString_hpp
 
 #include <iostream>
-using namespace std;
 
 class SuperString
 {
@@ -42,8 +41,8 @@ public:
     SuperString operator+ (const SuperString &superString);
     char operator[] (long unsigned int index);
     
-    friend istream& operator>> (istream &in, SuperString &superString);
-    friend ostream& operator<< (ostream &out, const SuperString &superString);
+    friend std::istream& operator>> (std::istream &in, SuperString &superString);
+    friend std::ostream& operator<< (std::ostream &out, const SuperString &superString);
     
     void addText(char text[]);
     void addCharacterToBeginning(const char &input);

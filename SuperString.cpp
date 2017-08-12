@@ -66,21 +66,21 @@ char SuperString::operator[] (long unsigned int index)
     return getCharAtPosition(index);
 }
 
-istream& operator>> (istream &in, SuperString &superString)
+std::istream& operator>> (std::istream &in, SuperString &superString)
 {
     superString.size = 0;
-    char character = cin.get();
+    char character = std::cin.get();
     
     while(character != '\n')
     {
         superString.addCharacterToEnd(character);
-        character = cin.get();
+        character = std::cin.get();
     }
     
     return in;
 }
 
-ostream& operator<< (ostream &out, const SuperString &superString)
+std::ostream& operator<< (std::ostream &out, const SuperString &superString)
 {
     SuperString::node *iter = superString.head;
     
