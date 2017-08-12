@@ -35,6 +35,7 @@ public:
     
     // Deep copy
     SuperString& operator= (const SuperString &superString);
+    SuperString& operator= (char text[]);
     bool operator== (const SuperString &superString) const;
     void operator+= (const char &input);
     void operator+= (const SuperString &superString);
@@ -54,6 +55,9 @@ public:
     void printReverse() const;
     void reverse();
     char getCharAtPosition(long unsigned int &index) const;
+    void trimWhiteSpace();
+    void trimBeginningWhiteSpace();
+    void trimEndWhiteSpace();
     void clear();
     
     long unsigned int getLength() const;

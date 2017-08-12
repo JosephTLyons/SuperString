@@ -56,6 +56,13 @@ SuperString& SuperString::operator= (const SuperString &superString)
     return *this;
 }
 
+SuperString& SuperString::operator= (char text[])
+{
+    addText(text);
+    
+    return *this;
+}
+
 bool SuperString::operator== (const SuperString &superString) const
 {
     return isEqual(superString);
@@ -247,6 +254,41 @@ char SuperString::getCharAtPosition(long unsigned int &index) const
     }
     
     return iter->character;
+}
+
+void SuperString::trimWhiteSpace()
+{
+    trimBeginningWhiteSpace();
+    trimEndWhiteSpace();
+}
+
+void SuperString::trimBeginningWhiteSpace()
+{
+    Node *iter = head;
+    
+    while(std::isspace(iter->character))
+    {
+        iter = iter->next;
+        delete iter->previous;
+        length--;
+    }
+    
+    head = iter;
+}
+
+void SuperString::trimEndWhiteSpace()
+{
+    Node *iter = tail;
+    
+    while(std::isspace(iter->previous->character))
+    {
+        iter = iter->previous;
+        delete iter->next;
+        length--;
+    }
+    
+    tail = iter;
+    tail->character = '\0';
 }
 
 void SuperString::clear()
