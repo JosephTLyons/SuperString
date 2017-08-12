@@ -26,6 +26,7 @@ private:
     
     // Private methods
     void init();
+    bool newNode(node *&node);
     
 public:
     SuperString();
