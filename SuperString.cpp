@@ -43,6 +43,12 @@ SuperString::SuperString(char text[])
     addText(text);
 }
 
+SuperString::SuperString(const SuperString &superString)
+{
+    init();
+    addText(superString.getText());
+}
+
 SuperString::~SuperString()
 {
     clear();
@@ -157,8 +163,7 @@ void SuperString::concatenate(const SuperString &superString)
 
 SuperString SuperString::add(const SuperString &superString)
 {
-    SuperString temp;
-    temp += *this;
+    SuperString temp = *this;
     temp += superString;
     return temp;
 }

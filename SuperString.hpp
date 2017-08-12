@@ -31,6 +31,7 @@ private:
 public:
     SuperString();
     SuperString(char text[]);
+    SuperString(const SuperString &superString);
     ~SuperString();
     
     // Deep copy
