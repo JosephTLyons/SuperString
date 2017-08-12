@@ -202,7 +202,7 @@ void SuperString::printReverse() const
 void SuperString::reverse()
 {
     node *iterOne = head, *iterTwo = tail->previous;
-    long unsigned int halfWayPoint = size / 2;
+    const long unsigned int halfWayPoint = size / 2;
     
     for (int i = 0; i < halfWayPoint; i++)
     {
