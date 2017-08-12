@@ -16,17 +16,17 @@ class SuperString
 private:
     long unsigned int length;
     
-    struct node
+    struct Node
     {
         char character;
-        node *next, *previous;
+        Node *next, *previous;
     };
     
-    node *head, *tail;
+    Node *head, *tail;
     
     // Private methods
     void init();
-    bool newNode(node *&node);
+    bool newNode(Node *&node);
     
 public:
     SuperString();

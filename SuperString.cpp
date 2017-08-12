@@ -20,9 +20,9 @@ void SuperString::init()
     }
 }
 
-bool SuperString::newNode(node *&nodePtr)
+bool SuperString::newNode(Node *&nodePtr)
 {
-    nodePtr = new (std::nothrow) node;
+    nodePtr = new (std::nothrow) Node;
     
     if (nodePtr)
     {
@@ -97,7 +97,7 @@ std::istream& operator>> (std::istream &in, SuperString &superString)
 
 std::ostream& operator<< (std::ostream &out, const SuperString &superString)
 {
-    SuperString::node *iter = superString.head;
+    SuperString::Node *iter = superString.head;
     
     for (int i = 0; i < superString.length; i++)
     {
@@ -163,7 +163,7 @@ bool SuperString::isEqual(const SuperString &superString) const
         return false;
     }
     
-    node *iterOne = head, *iterTwo = superString.head;
+    Node *iterOne = head, *iterTwo = superString.head;
     
     for (int i = 0; i < length; i++)
     {
@@ -182,7 +182,7 @@ bool SuperString::isEqual(const SuperString &superString) const
 char* SuperString::getText() const
 {
     char *textArrayPtr = new char[length];
-    node *iter = head;
+    Node *iter = head;
     
     for (int i = 0; i < length; i++)
     {
@@ -195,7 +195,7 @@ char* SuperString::getText() const
 
 void SuperString::print() const
 {
-    node *iter = head;
+    Node *iter = head;
     
     for (int i = 0; i < length; i++)
     {
@@ -208,7 +208,7 @@ void SuperString::print() const
 
 void SuperString::printReverse() const
 {
-    node *iter = tail->previous;
+    Node *iter = tail->previous;
     
     for (int i = 0; i < length; i++)
     {
@@ -221,7 +221,7 @@ void SuperString::printReverse() const
 
 void SuperString::reverse()
 {
-    node *iterOne = head, *iterTwo = tail->previous;
+    Node *iterOne = head, *iterTwo = tail->previous;
     const long unsigned int halfWayPoint = length / 2;
     
     for (int i = 0; i < halfWayPoint; i++)
@@ -239,7 +239,7 @@ char SuperString::getCharAtPosition(long unsigned int &index) const
         return '\0';
     }
     
-    node *iter = head;
+    Node *iter = head;
     
     for (long unsigned int i = 0; i != index; i++)
     {
