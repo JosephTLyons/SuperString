@@ -199,6 +199,19 @@ void SuperString::printReverse() const
     std::cout << std::endl;
 }
 
+void SuperString::reverse()
+{
+    node *iterOne = head, *iterTwo = tail->previous;
+    long unsigned int temp = size / 2;
+    
+    for (int i = 0; i < temp; i++)
+    {
+        std::swap(iterOne->character, iterTwo->character);
+        iterOne = iterOne->next;
+        iterTwo = iterTwo->previous;
+    }
+}
+
 char SuperString::getCharAtPosition(long unsigned int &index) const
 {
     if (index > size - 1)

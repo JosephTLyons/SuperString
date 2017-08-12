@@ -53,6 +53,7 @@ public:
     char* getText() const;
     void print() const;
     void printReverse() const;
+    void reverse();
     char getCharAtPosition(long unsigned int &index) const;
     void clear();
     
