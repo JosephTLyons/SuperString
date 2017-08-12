@@ -40,7 +40,6 @@ public:
     void operator+= (const SuperString &superString);
     SuperString operator+ (const SuperString &superString);
     char operator[] (long unsigned int index);
-    
     friend std::istream& operator>> (std::istream &in, SuperString &superString);
     friend std::ostream& operator<< (std::ostream &out, const SuperString &superString);
     
