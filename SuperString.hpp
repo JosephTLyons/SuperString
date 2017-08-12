@@ -35,7 +35,6 @@ public:
     // Deep copy
     SuperString& operator= (const SuperString &superString);
     bool operator== (const SuperString &superString) const;
-    
     void operator+= (const char &input);
     void operator+= (const SuperString &superString);
     SuperString operator+ (const SuperString &superString);
