@@ -192,10 +192,11 @@ bool SuperString::isEqual(const SuperString &superString) const
 
 char* SuperString::getText() const
 {
-    char *textArrayPtr = new char[length];
+    // Length + 1 to account for the extra char needed for '\0'
+    char *textArrayPtr = new char[length + 1];
     Node *iter = head;
     
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < length + 1; i++)
     {
         textArrayPtr[i] = iter->character;
         iter = iter->next;
