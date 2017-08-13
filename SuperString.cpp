@@ -76,7 +76,7 @@ bool SuperString::operator== (const SuperString &superString) const
 
 void SuperString::operator+= (const char &input)
 {
-    addCharacterToBeginning(input);
+    addCharacterToEnd(input);
 }
 
 void SuperString::operator+= (const SuperString &superString)
