@@ -53,6 +53,7 @@ SuperString::~SuperString()
 {
     clear();
     delete head;
+    head = tail = nullptr;
 }
 
 SuperString& SuperString::operator= (const SuperString &superString)
