@@ -164,7 +164,7 @@ void SuperString::concatenate(const SuperString &superString)
 SuperString SuperString::add(const SuperString &superString) const
 {
     SuperString temp = *this;
-    temp += superString;
+    temp.concatenate(superString);
     return temp;
 }
 
