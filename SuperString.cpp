@@ -113,7 +113,7 @@ std::ostream& operator<< (std::ostream &out, const SuperString &superString)
 {
     SuperString::Node *iter = superString.head;
     
-    for (int i = 0; i < superString.length; i++)
+    for (unsigned long int i = 0; i < superString.length; i++)
     {
         out << iter->character;
         iter = iter->next;
@@ -124,7 +124,7 @@ std::ostream& operator<< (std::ostream &out, const SuperString &superString)
 
 void SuperString::addText(char text[])
 {
-    for (int i = 0; text[i] != '\0'; i++)
+    for (unsigned long int i = 0; text[i] != '\0'; i++)
     {
         addCharacterToEnd(text[i]);
     }
@@ -177,7 +177,7 @@ bool SuperString::isEqual(const SuperString &superString) const
     
     Node *iterOne = head, *iterTwo = superString.head;
     
-    for (int i = 0; i < length; i++)
+    for (unsigned long int i = 0; i < length; i++)
     {
         if (iterOne->character != iterTwo->character)
         {
@@ -197,7 +197,7 @@ char* SuperString::getText() const
     char *textArrayPtr = new char[length + 1];
     Node *iter = head;
     
-    for (int i = 0; i < length + 1; i++)
+    for (unsigned long int i = 0; i < length + 1; i++)
     {
         textArrayPtr[i] = iter->character;
         iter = iter->next;
@@ -210,7 +210,7 @@ void SuperString::print() const
 {
     Node *iter = head;
     
-    for (int i = 0; i < length; i++)
+    for (unsigned long int i = 0; i < length; i++)
     {
         std::cout << iter->character;
         iter = iter->next;
@@ -223,7 +223,7 @@ void SuperString::printReverse() const
 {
     Node *iter = tail->previous;
     
-    for (int i = 0; i < length; i++)
+    for (unsigned long int i = 0; i < length; i++)
     {
         std::cout << iter->character;
         iter = iter->previous;
@@ -237,7 +237,7 @@ void SuperString::reverse()
     Node *iterOne = head, *iterTwo = tail->previous;
     const long unsigned int halfWayPoint = length / 2;
     
-    for (int i = 0; i < halfWayPoint; i++)
+    for (unsigned long int i = 0; i < halfWayPoint; i++)
     {
         std::swap(iterOne->character, iterTwo->character);
         iterOne = iterOne->next;
@@ -299,7 +299,7 @@ void SuperString::trimEndWhiteSpace()
 
 void SuperString::clear()
 {
-    for (int i = 0; i < length; i++)
+    for (unsigned long int i = 0; i < length; i++)
     {
         tail = tail->previous;
         delete tail->next;
