@@ -160,7 +160,7 @@ void SuperString::concatenate(const SuperString &superString)
     addText(superString.getText());
 }
 
-SuperString SuperString::add(const SuperString &superString)
+SuperString SuperString::add(const SuperString &superString) const
 {
     SuperString temp = *this;
     temp += superString;
