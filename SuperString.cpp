@@ -127,8 +127,6 @@ void SuperString::addText(char text[])
     {
         addCharacterToEnd(text[i]);
     }
-    
-    tail->character = '\0';
 }
 
 void SuperString::addCharacterToBeginning(const char &input)
@@ -153,6 +151,7 @@ void SuperString::addCharacterToEnd(const char &input)
     {
         tail->next->previous = tail;
         tail = tail->next;
+        tail->character = '\0';
     }
 }
 
