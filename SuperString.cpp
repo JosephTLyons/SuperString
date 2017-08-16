@@ -13,14 +13,14 @@ void SuperString::init()
 {
     length = 0;
     
-    if (newNode(head))
+    if (createNewNode(head))
     {
         tail = head;
         head->character = '\0';
     }
 }
 
-bool SuperString::newNode(Node *&nodePtr)
+bool SuperString::createNewNode(Node *&nodePtr)
 {
     nodePtr = new (std::nothrow) Node;
     
@@ -137,7 +137,7 @@ void SuperString::addCharacterToBeginning(const char &input)
 {
     ++length;
     
-    if (newNode(head->previous))
+    if (createNewNode(head->previous))
     {
         head->previous->next = head;
         head = head->previous;
@@ -151,7 +151,7 @@ void SuperString::addCharacterToEnd(const char &input)
     
     tail->character = input;
     
-    if (newNode(tail->next))
+    if (createNewNode(tail->next))
     {
         tail->next->previous = tail;
         tail = tail->next;
