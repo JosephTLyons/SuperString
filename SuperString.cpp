@@ -221,6 +221,7 @@ void SuperString::print() const
 
 void SuperString::printReverse() const
 {
+    // tail->previous because tail is '\0'
     Node *iter = tail->previous;
     
     for (unsigned long int i = 0; i < length; i++)
