@@ -26,6 +26,9 @@ bool SuperString::newNode(Node *&nodePtr)
     
     if (nodePtr)
     {
+        nodePtr->previous = nullptr;
+        nodePtr->next = nullptr;
+        
         return true;
     }
     
