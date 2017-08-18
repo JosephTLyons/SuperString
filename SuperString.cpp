@@ -164,6 +164,18 @@ void SuperString::concatenate(const SuperString &superString)
     addText(superString.getText());
 }
 
+void SuperString::consolidate(SuperString &superString)
+{
+    length += superString.length;
+    tail->previous->next = superString.head;
+    superString.head->previous = tail->previous;
+    Node *temp = tail;
+    tail = superString.tail;
+    superString.head = superString.tail = temp;
+    temp->next = temp->previous = nullptr;
+    superString.length = 0;
+}
+
 SuperString SuperString::add(const SuperString &superString) const
 {
     SuperString temp = *this;

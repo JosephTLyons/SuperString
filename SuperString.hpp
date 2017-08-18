@@ -49,6 +49,7 @@ public:
     void addCharacterToBeginning(const char &input);
     void addCharacterToEnd(const char &input);
     void concatenate(const SuperString &superString);
+    void consolidate(SuperString &superString);
     SuperString add(const SuperString &superString) const;
     bool isEqual(const SuperString &superString) const;
     char* getText() const;
