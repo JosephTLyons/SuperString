@@ -30,7 +30,7 @@ private:
     
 public:
     SuperString();
-    SuperString(char text[]);
+    SuperString(const char text[]);
     SuperString(const SuperString &superString);
     ~SuperString();
     
@@ -45,7 +45,7 @@ public:
     friend std::istream& operator>> (std::istream &in, SuperString &superString);
     friend std::ostream& operator<< (std::ostream &out, const SuperString &superString);
     
-    void addText(char text[]);
+    void addText(const char text[]);
     void addCharacterToBeginning(const char &input);
     void addCharacterToEnd(const char &input);
     void concatenate(const SuperString &superString);

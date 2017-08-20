@@ -40,7 +40,7 @@ SuperString::SuperString()
     init();
 }
 
-SuperString::SuperString(char text[])
+SuperString::SuperString(const char text[])
 {
     init();
     addText(text);
@@ -125,7 +125,7 @@ std::ostream& operator<< (std::ostream &out, const SuperString &superString)
     return out;
 }
 
-void SuperString::addText(char text[])
+void SuperString::addText(const char text[])
 {
     for (unsigned long int i = 0; text[i] != '\0'; i++)
     {
