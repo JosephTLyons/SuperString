@@ -78,6 +78,11 @@ bool SuperString::operator== (const SuperString &superString) const
     return isEqual(superString);
 }
 
+bool SuperString::operator!= (const SuperString &superString) const
+{
+    return ! (*this == superString);
+}
+
 void SuperString::operator+= (const char &input)
 {
     addCharacterToEnd(input);

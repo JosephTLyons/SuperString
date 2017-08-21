@@ -38,6 +38,7 @@ public:
     SuperString& operator= (const SuperString &superString);
     SuperString& operator= (char text[]);
     bool operator== (const SuperString &superString) const;
+    bool operator!= (const SuperString &superString) const;
     void operator+= (const char &input);
     void operator+= (const SuperString &superString);
     SuperString operator+ (const SuperString &superString);
