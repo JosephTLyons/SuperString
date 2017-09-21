@@ -363,6 +363,13 @@ SuperString SuperString::convertToSuperString(const std::string &stdString)
     return superString;
 }
 
+std::string SuperString::reverseStdString(const std::string &stdString)
+{
+    SuperString superString = convertToSuperString(stdString);
+    superString.reverse();
+    return convertToStdString(superString);
+}
+
 
 
 

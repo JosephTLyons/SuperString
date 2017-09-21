@@ -70,6 +70,9 @@ public:
     // Use these methods to convert between std::string and SuperString
     static std::string convertToStdString(const SuperString &superString);
     static SuperString convertToSuperString(const std::string &stdString);
+    
+    // std::string manipulation methods
+    static std::string reverseStdString(const std::string &stdString);
 };
 
 #endif /* SuperString_hpp */
