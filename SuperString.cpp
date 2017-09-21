@@ -346,19 +346,9 @@ char SuperString::getLastCharacter() const
     return tail->previous->character;
 }
 
-std::string SuperString::convertToStdString() const
+std::string SuperString::convertToStdString(const SuperString &superString)
 {
-    std::string stdString;
-    
-    Node *iter = head;
-    
-    for (unsigned long int i = 0; i < length; i++)
-    {
-        stdString += iter->character;
-        iter = iter->next;
-    }
-    
-    return stdString;
+    return superString.getText();
 }
 
 SuperString SuperString::convertToSuperString(const std::string &stdString)

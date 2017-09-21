@@ -68,7 +68,7 @@ public:
     char getLastCharacter() const;
     
     // Use these methods to convert between std::string and SuperString
-    std::string convertToStdString() const;
+    static std::string convertToStdString(const SuperString &superString);
     static SuperString convertToSuperString(const std::string &stdString);
 };
 
