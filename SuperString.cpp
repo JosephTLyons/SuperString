@@ -345,3 +345,34 @@ char SuperString::getLastCharacter() const
 {
     return tail->previous->character;
 }
+
+std::string SuperString::convertToStdString() const
+{
+    std::string stdString;
+    
+    Node *iter = head;
+    
+    for (unsigned long int i = 0; i < length; i++)
+    {
+        stdString += iter->character;
+        iter = iter->next;
+    }
+    
+    return stdString;
+}
+
+SuperString SuperString::convertToSuperString(const std::string &stdString)
+{
+    SuperString superString;
+    
+    for (int i = 0; i < stdString.length(); i++)
+    {
+        superString.addCharacterToEnd(stdString[i]);
+    }
+    
+    return superString;
+}
+
+
+
+

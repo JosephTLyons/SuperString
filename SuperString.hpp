@@ -66,6 +66,10 @@ public:
     long unsigned int getLength() const;
     char getFirstCharacter() const;
     char getLastCharacter() const;
+    
+    // Use these methods to convert between std::string and SuperString
+    std::string convertToStdString() const;
+    static SuperString convertToSuperString(const std::string &stdString);
 };
 
 #endif /* SuperString_hpp */
