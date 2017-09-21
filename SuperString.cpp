@@ -369,7 +369,3 @@ std::string SuperString::reverseStdString(const std::string &stdString)
     superString.reverse();
     return convertToStdString(superString);
 }
-
-
-
-
