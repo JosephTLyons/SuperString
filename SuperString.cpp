@@ -133,9 +133,7 @@ std::ostream& operator<< (std::ostream &out, const SuperString &superString)
 void SuperString::addText(const char text[])
 {
     for (unsigned long int i = 0; text[i] != '\0'; i++)
-    {
         addCharacterToEnd(text[i]);
-    }
 }
 
 void SuperString::addCharacterToBeginning(const char &input)
@@ -191,18 +189,14 @@ SuperString SuperString::add(const SuperString &superString) const
 bool SuperString::isEqual(const SuperString &superString) const
 {
     if (length != superString.length)
-    {
         return false;
-    }
     
     Node *iterOne = head, *iterTwo = superString.head;
     
     for (unsigned long int i = 0; i < length; i++)
     {
         if (iterOne->character != iterTwo->character)
-        {
             return false;
-        }
         
         iterOne = iterOne->next;
         iterTwo = iterTwo->next;
@@ -269,16 +263,12 @@ void SuperString::reverse()
 char SuperString::getCharAtPosition(long unsigned int &index) const
 {
     if (index > length - 1)
-    {
         return '\0';
-    }
     
     Node *iter = head;
     
     for (long unsigned int i = 0; i != index; i++)
-    {
         iter = iter->next;
-    }
     
     return iter->character;
 }
@@ -356,9 +346,7 @@ SuperString SuperString::convertToSuperString(const std::string &stdString)
     SuperString superString;
     
     for (int i = 0; i < stdString.length(); i++)
-    {
         superString.addCharacterToEnd(stdString[i]);
-    }
     
     return superString;
 }
