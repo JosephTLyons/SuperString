@@ -46,6 +46,12 @@ SuperString::SuperString(const char text[])
     addText(text);
 }
 
+SuperString::SuperString(const std::string &string)
+{
+    init();
+    addText(convertToSuperString(string).getText());
+}
+
 SuperString::SuperString(const SuperString &superString)
 {
     init();

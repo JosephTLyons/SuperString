@@ -31,6 +31,7 @@ private:
 public:
     SuperString();
     SuperString(const char text[]);
+    SuperString(const std::string &string);
     SuperString(const SuperString &superString);
     ~SuperString();
     
